@@ -1,5 +1,7 @@
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import rootReducer from './reducers/index'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger'
 
 
 const initialState={
@@ -8,6 +10,8 @@ const initialState={
 
 export const store=createStore(
     rootReducer, //<= combine reducer
-    initialState
+    initialState,
+    composeWithDevTools(applyMiddleware(logger))
+    //applyMiddleware(logger)
 )
 
