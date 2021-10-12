@@ -4,7 +4,7 @@ const initialState={
     count:0
 }
 
-const CounterReducer  = (state =initialState,action)=>{
+const counterReducer  = (state =initialState,action)=>{
     switch(action.type){
 
         case increament_value:
@@ -16,11 +16,11 @@ const CounterReducer  = (state =initialState,action)=>{
         case decreament_value:
             return {
                 ...state,
-                count:state.count-+action.payload
+                count:state.count-action.payload
             }            
         default:
             return state
     }
 }
 
-export default CounterReducer 
+export default counterReducer 

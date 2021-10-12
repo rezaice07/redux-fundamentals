@@ -13,7 +13,7 @@ const Counter=({increament,decreament,count})=> {
 }
 
 const mapStateToProps=(state)=>({
-    count:state.CounterReducer.count
+    count:state.counterReducer.count
 })
 
 export default connect(mapStateToProps,{increament,decreament})(Counter)
